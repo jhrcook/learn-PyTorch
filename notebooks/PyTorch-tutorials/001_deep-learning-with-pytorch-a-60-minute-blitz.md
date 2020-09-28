@@ -1,4 +1,4 @@
-# Deep Learning with PyTorch: A 60 Minute Blitz
+# [Deep Learning with PyTorch: A 60 Minute Blitz](https://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html)
 
 
 ```python
@@ -6,7 +6,7 @@ import torch
 import numpy as np
 ```
 
-## What is PyTorch
+## [What is PyTorch](https://pytorch.org/tutorials/beginner/blitz/tensor_tutorial.html#sphx-glr-beginner-blitz-tensor-tutorial-py)
 
 ### Getting Started
 
@@ -20,11 +20,11 @@ x = torch.empty(5, 3)
 print(x)
 ```
 
-    tensor([[9.5461e-01, 4.4377e+27, 1.7975e+19],
-            [4.6894e+27, 7.9463e+08, 3.2604e-12],
-            [2.6209e+20, 4.1641e+12, 1.9434e-19],
-            [3.0881e+29, 6.3828e+28, 1.4603e-19],
-            [7.7179e+28, 7.7591e+26, 3.0357e+32]])
+    tensor([[-1.3032e+26,  4.5832e-41, -1.3032e+26],
+            [ 4.5832e-41,         nan,  0.0000e+00],
+            [ 7.6194e+31,  1.5564e+28,  4.7984e+30],
+            [ 6.2121e+22,  1.8370e+25,  1.4603e-19],
+            [ 6.4069e+02,  2.7489e+20,  1.5444e+25]])
 
 
 A randomly initialized matrix.
@@ -35,11 +35,11 @@ x = torch.rand(5, 3)
 print(x)
 ```
 
-    tensor([[0.4489, 0.1336, 0.5693],
-            [0.3049, 0.7561, 0.9073],
-            [0.1251, 0.9037, 0.3331],
-            [0.8124, 0.3350, 0.2602],
-            [0.2203, 0.7381, 0.0535]])
+    tensor([[0.3105, 0.5768, 0.4052],
+            [0.7626, 0.5865, 0.5171],
+            [0.3287, 0.7484, 0.2569],
+            [0.8918, 0.7016, 0.8462],
+            [0.3458, 0.8036, 0.2743]])
 
 
 Construct a tensor from data.
@@ -75,11 +75,11 @@ x = torch.randn_like(x, dtype=torch.float)
 print(x)
 ```
 
-    tensor([[-2.0303,  0.4544,  2.0180],
-            [-0.6643,  1.5354,  0.4815],
-            [ 0.7523,  1.2000, -0.4307],
-            [ 0.3862, -1.4694, -0.5800],
-            [-0.6713, -0.8095, -1.7725]])
+    tensor([[-0.1035,  1.1275, -0.2697],
+            [-0.4714,  0.2587, -1.4718],
+            [ 0.6178,  1.1679,  0.9228],
+            [-0.6413, -0.8245,  0.8542],
+            [ 0.5625, -1.1115,  0.2299]])
 
 
 Can get size of a tensor.
@@ -108,11 +108,11 @@ y = torch.rand(5, 3)
 print(x + y)
 ```
 
-    tensor([[-1.6251,  1.3736,  2.5858],
-            [-0.0808,  2.4137,  0.7262],
-            [ 0.9908,  1.3316, -0.3370],
-            [ 0.6108, -1.3220, -0.4926],
-            [-0.3491, -0.4727, -1.7639]])
+    tensor([[-0.0847,  1.3182,  0.4889],
+            [-0.2606,  0.7407, -1.2082],
+            [ 1.5850,  1.2210,  1.8451],
+            [-0.4966, -0.5162,  1.2255],
+            [ 0.7382, -1.0366,  0.8779]])
 
 
 
@@ -123,11 +123,11 @@ torch.add(x, y)
 
 
 
-    tensor([[-1.6251,  1.3736,  2.5858],
-            [-0.0808,  2.4137,  0.7262],
-            [ 0.9908,  1.3316, -0.3370],
-            [ 0.6108, -1.3220, -0.4926],
-            [-0.3491, -0.4727, -1.7639]])
+    tensor([[-0.0847,  1.3182,  0.4889],
+            [-0.2606,  0.7407, -1.2082],
+            [ 1.5850,  1.2210,  1.8451],
+            [-0.4966, -0.5162,  1.2255],
+            [ 0.7382, -1.0366,  0.8779]])
 
 
 
@@ -139,11 +139,11 @@ torch.add(x, y, out=result)
 print(result)
 ```
 
-    tensor([[-1.6251,  1.3736,  2.5858],
-            [-0.0808,  2.4137,  0.7262],
-            [ 0.9908,  1.3316, -0.3370],
-            [ 0.6108, -1.3220, -0.4926],
-            [-0.3491, -0.4727, -1.7639]])
+    tensor([[-0.0847,  1.3182,  0.4889],
+            [-0.2606,  0.7407, -1.2082],
+            [ 1.5850,  1.2210,  1.8451],
+            [-0.4966, -0.5162,  1.2255],
+            [ 0.7382, -1.0366,  0.8779]])
 
 
 
@@ -153,11 +153,11 @@ y.add_(x)
 print(y)
 ```
 
-    tensor([[-1.6251,  1.3736,  2.5858],
-            [-0.0808,  2.4137,  0.7262],
-            [ 0.9908,  1.3316, -0.3370],
-            [ 0.6108, -1.3220, -0.4926],
-            [-0.3491, -0.4727, -1.7639]])
+    tensor([[-0.0847,  1.3182,  0.4889],
+            [-0.2606,  0.7407, -1.2082],
+            [ 1.5850,  1.2210,  1.8451],
+            [-0.4966, -0.5162,  1.2255],
+            [ 0.7382, -1.0366,  0.8779]])
 
 
 NumPy-like indexing.
@@ -167,7 +167,7 @@ NumPy-like indexing.
 print(x[:, 1])
 ```
 
-    tensor([ 0.4544,  1.5354,  1.2000, -1.4694, -0.8095])
+    tensor([ 1.1275,  0.2587,  1.1679, -0.8245, -1.1115])
 
 
 Resizing and reshaping using `torch.view()`.
@@ -192,8 +192,8 @@ print(x)
 print(x.item())
 ```
 
-    tensor([-0.0352])
-    -0.035218432545661926
+    tensor([-0.3706])
+    -0.3705705404281616
 
 
 ### NumPy Bridge
@@ -328,7 +328,7 @@ print(y)
 print(y.grad_fn)
 ```
 
-    <AddBackward0 object at 0x7ff44fa1fbe0>
+    <AddBackward0 object at 0x7fc35ecbbdc0>
 
 
 Perform more operations on `y`.
@@ -373,6 +373,218 @@ print(x.grad)
 Neural networks (NN) are constructed using the `torch.nn` package.
 It uses `autograd` to define and differentiate them.
 An `nn.Module` contains layers and a method `.forward(input)` that returns the output.
+
+A typical training procedure:
+
+1. define the NN with some learnable parameters (weights)
+2. iterate over the dataset of inputs
+3. process the inputs through the network
+4. compute the loss
+5. propagate gradients back into the network's parameters
+6. update the weights of the network
+
+A typical simple updating rule for the final step is `weight = weight - learning_rate * gradient`.
+
+### Define the network
+
+Below is a example neural network.
+
+
+```python
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+
+class Net(nn.Module):
+    def __init__(self):
+        super(Net, self).__init__()
+        
+        # 1 input channel, 6 output channels, 3x3 square convolution
+        
+        #kernel
+        self.conv1 = nn.Conv2d(1, 6, 3)
+        self.conv2 = nn.Conv2d(6, 16, 3)
+        # an affine operation: y = Wx + b
+        self.fc1 = nn.Linear(16 * 6 * 6, 120)  # 6x6 from image dimensions
+        self.fc2 = nn.Linear(120, 84)
+        self.fc3 = nn.Linear(84, 10)
+    
+    def forward(self, x):
+        # Max pooling over a (2x2) window
+        x = F.max_pool2d(F.relu(self.conv1(x)), (2, 2))
+        
+        # If the size is a square you can only specify a single number
+        x = F.max_pool2d(F.relu(self.conv2(x)), 2)
+        x = x.view(-1, self.num_flat_features(x))
+        x = F.relu(self.fc1(x))
+        x = F.relu(self.fc2(x))
+        x = self.fc3(x)
+        return x
+    
+    def num_flat_features(self, x):
+        size = x.size()[1:]  # all dimensions except the batch dimension
+        num_features = 1
+        for s in size:
+            num_features *= s
+        return num_features
+```
+
+
+```python
+net = Net()
+print(net)
+```
+
+    Net(
+      (conv1): Conv2d(1, 6, kernel_size=(3, 3), stride=(1, 1))
+      (conv2): Conv2d(6, 16, kernel_size=(3, 3), stride=(1, 1))
+      (fc1): Linear(in_features=576, out_features=120, bias=True)
+      (fc2): Linear(in_features=120, out_features=84, bias=True)
+      (fc3): Linear(in_features=84, out_features=10, bias=True)
+    )
+
+
+The `forward()` method must be defined and the `backward()` method is automatically defined using `autograd`.
+
+The learnable parameters of a model are returned by `net.parameters()`.
+
+
+```python
+params = list(net.parameters())
+print(len(params))
+print(params[0].size())  # the weights of conv1
+```
+
+    10
+    torch.Size([6, 1, 3, 3])
+
+
+We can try feeding in a random 32x32 input.
+
+
+```python
+input = torch.randn(1, 1, 32, 32)
+out = net(input)
+print(out)
+```
+
+    tensor([[-0.0503,  0.0191,  0.0587,  0.0462, -0.0709, -0.1065,  0.0905, -0.0233,
+              0.1208, -0.0207]], grad_fn=<AddmmBackward>)
+
+
+Zero the gradient buffers of all parameters and backprops with random gradients.
+
+
+```python
+net.zero_grad()
+out.backward(torch.randn(1, 10))
+```
+
+Note that `torch.nn` only supports mini-batches of input, not single samples.
+`input.unsqueeze(0)` can be used to fake batch dimensions.
+
+### Loss Function
+
+A loss function takes the model's output and target as inputs and computes a value that estimates how far away the outputs are from the target.
+
+There are several available in the `nn` package.
+A simple one is `nn.MSELoss` which computes the mean-squared error between the input and target.
+Below is an example.
+
+
+```python
+output = net(input)
+target = torch.randn(10)
+target = target.view(1, -1)  # mimic the shape of the output
+criterion = nn.MSELoss()
+
+loss = criterion(output, target)
+print(loss)
+```
+
+    tensor(1.6354, grad_fn=<MseLossBackward>)
+
+
+Now, when we call `loss.backward()`, the whole graph is differentiated w.r.t. the loss and all Tensors in the graph (that has `requires_grad=True`) will have their `.grad` Tensor accumulated with the gradient
+
+### Backprop
+
+To backprogagate the error, all that is needed is to call `loss.backward()`.
+Make sure to clear the existing gradients, first, else gradients will be accumulated to existing gradients.
+
+Below, we call `loss.backward()` and look at `conv1`'s bias gradients before and after the backprop.
+
+
+```python
+net.zero_grad()
+
+print("conv1.bias.grad before backward.")
+print(net.conv1.bias.grad)
+
+loss.backward()
+
+print("conv1.bias.grad after backward.")
+print(net.conv1.bias.grad)
+```
+
+    conv1.bias.grad before backward.
+    tensor([0., 0., 0., 0., 0., 0.])
+    conv1.bias.grad after backward.
+    tensor([-0.0052, -0.0034,  0.0013, -0.0077,  0.0130,  0.0208])
+
+
+### Update the weights
+
+The simplest rule used in practice is the Stochastic Gradient Descent (SGD):
+
+```
+weight = weight - learning_rate * gradient
+```
+
+Various updating rules have been updatig in `torch.optim`.
+An example of using it is shown below.
+
+
+```python
+import torch.optim as optim
+
+# Create the optimizer.
+optimizer = optim.SGD(net.parameters(), lr=0.01)
+
+optimizer.zero_grad()  # zero the gradient buffers
+
+output = net(input)
+loss = criterion(output, target)
+loss.backward()
+optimizer.step()  # performs the update
+```
+
+
+```python
+print(net.conv1.bias.grad)
+```
+
+    tensor([-0.0038,  0.0008,  0.0008, -0.0175,  0.0033,  0.0206])
+
+
+## [Training a Classifier](https://pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html#sphx-glr-beginner-blitz-cifar10-tutorial-py)
+
+### What about data?
+
+Generally, the data can be loaded as NumPy arrays using standard libraries and then converted into `torch.*Tensor` objects.
+Here are some standard libraries for these operations:
+
+- images: Pillow, OpenCV
+- audio: scipy, librosa
+- text: standard Python, NLTK, SpaCy
+
+The `torchvision` package was created specifically for vision tasks.
+It has data loaders for common data sets (e.g. Imagenet, CIFAR10, MNIST) and data transformers for images, vizualization: `torchvision.datasets` and `torch.utils.data.DataLoader`.
+
+For the following tutorial, we will use the CIFAR10 dataset.
+It has the classes: ‘airplane’, ‘automobile’, ‘bird’, ‘cat’, ‘deer’, ‘dog’, ‘frog’, ‘horse’, ‘ship’, ‘truck’. The images in CIFAR-10 are of size 3x32x32, i.e. 3-channel color images of 32x32 pixels in size.
+
+### Training and image classifier
 
 
 ```python
